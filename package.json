@@ -1,0 +1,33 @@
+{
+  "name": "event-ticket-dapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "hardhat:compile": "hardhat compile",
+    "hardhat:test": "hardhat test",
+    "hardhat:run" : "hardhat run scripts/interact.ts --network localhost",
+    "hardhat:deploy": "hardhat ignition deploy ignition/modules/EventTicket.ts --network localhost",
+    "hardhat:deploy:reset": "hardhat deploy --reset"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.17.0",
+      "onFail": "download"
+    }
+  },
+  "type": "module",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ignition": "^3.1.8",
+    "@nomicfoundation/hardhat-toolbox-mocha-ethers": "^3.0.7",
+    "hardhat": "^3.14.0"
+  },
+  "dependencies": {
+    "ethers": "^6.17.0"
+  }
+}

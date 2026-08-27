@@ -1,0 +1,49 @@
+{
+  "_format": "hh3-sol-build-info-1",
+  "id": "solc-0_8_28-02e8ad227476fb4f11bf0fae8beaa51a93132c52",
+  "solcVersion": "0.8.28",
+  "solcLongVersion": "0.8.28+commit.7893614a",
+  "compilerType": "solc",
+  "toolVersions": {
+    "hardhat": "3.14.0"
+  },
+  "userSourceNameMap": {
+    "contracts/EventTicket.sol": "project/contracts/EventTicket.sol"
+  },
+  "input": {
+    "language": "Solidity",
+    "settings": {
+      "evmVersion": "cancun",
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "": [
+            "ast"
+          ],
+          "*": [
+            "abi",
+            "evm.bytecode.linkReferences",
+            "evm.bytecode.object",
+            "evm.bytecode.opcodes",
+            "evm.bytecode.sourceMap",
+            "evm.deployedBytecode.immutableReferences",
+            "evm.deployedBytecode.linkReferences",
+            "evm.deployedBytecode.object",
+            "evm.deployedBytecode.opcodes",
+            "evm.deployedBytecode.sourceMap",
+            "evm.methodIdentifiers"
+          ]
+        }
+      },
+      "remappings": []
+    },
+    "sources": {
+      "project/contracts/EventTicket.sol": {
+        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.24;\r\n\r\ncontract EventTicket {\r\n    address public owner;\r\n    uint256 public ticketPrice;\r\n    uint256 public ticketsSold;\r\n\r\n    constructor(uint256 _ticketPrice) {\r\n        owner = msg.sender;\r\n        ticketPrice = _ticketPrice;\r\n    }\r\n\r\n    function buyTicket() external payable {\r\n        require(msg.value == ticketPrice, \"Wrong ticket price\");\r\n\r\n        ticketsSold++;\r\n    }\r\n}"
+      }
+    }
+  }
+}
