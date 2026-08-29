@@ -11,9 +11,14 @@ contract EventTicket {
         ticketPrice = _ticketPrice;
     }
 
+    mapping(address => uint256[]) public ticketsOwned;
+    mapping(uint256 => address) public ticketOwner;
+
     function buyTicket() external payable {
         require(msg.value == ticketPrice, "Wrong ticket price");
 
         ticketsSold++;
+        ticketsOwned[msg.sender].push(ticketsSold);
+        ticketOwner[ticketsSold] = msg.sender;
     }
 }

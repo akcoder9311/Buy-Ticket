@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "hardhat:compile": "hardhat compile",
     "hardhat:test": "hardhat test",
-    "hardhat:run" : "hardhat run scripts/interact.ts --network localhost",
+    "hardhat:run": "hardhat run scripts/interact.ts --network localhost",
     "hardhat:deploy": "hardhat ignition deploy ignition/modules/EventTicket.ts --network localhost",
     "hardhat:deploy:reset": "hardhat deploy --reset"
   },
@@ -25,9 +25,12 @@
   "devDependencies": {
     "@nomicfoundation/hardhat-ignition": "^3.1.8",
     "@nomicfoundation/hardhat-toolbox-mocha-ethers": "^3.0.7",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^26.4.0",
     "hardhat": "^3.14.0"
   },
   "dependencies": {
+    "chai": "^6.2.2",
     "ethers": "^6.17.0"
   }
 }
